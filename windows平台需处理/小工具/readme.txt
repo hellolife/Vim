@@ -1,0 +1,1 @@
+需下载ctags.exe(http://www.vim.org/scripts/script.php?script_id=2288)和iconv.dll,将其复制到vim73文件夹中，并将vim73加入系统path中
