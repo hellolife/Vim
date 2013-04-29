@@ -4,7 +4,7 @@
 "     Author: YangYong , Department of Aerodynamics , NUAA
 "      Email: yangyongnuaa@126.com
 "    Created: 2013-04-04 15:04:30
-" LastChange: 2013-04-06 14:57:38
+" LastChange: 2013-04-11 22:37:37
 "========================================================================
 
 "-----------------------------------------需要的插件列表----------------------------------------
@@ -101,9 +101,8 @@
 "-----------------------------------------------------------------------------------------------
 "
 
-
 colorscheme blackboard       " 着色模式
-set guifont=Monaco\ 16       " 字体 && 字号
+set guifont=Monaco:h16       " 字体 && 字号
 set tabstop=4                " 设置tab键的宽度
 set shiftwidth=4             " 换行时行间交错使用4个空格
 set autoindent               " 自动对齐
@@ -404,3 +403,24 @@ map  <F3> :vim /<c-r>=expand("<cword>")<cr>/gj ./*.<c-r>=expand("%:e")<cr><cr>:c
 imap <F3> <ESC> :vim /<c-r>=expand("<cword>")<cr>/gj ./*.<c-r>=expand("%:e")<cr><cr>:cw<cr>
 vmap <F3> <ESC> :vim /<c-r>=@<cr>/gj ./*.<c-r>=expand("%:e")<cr><cr>:cw<cr>
 
+"VimWiki
+" 设置编码
+let g:vimwiki_w32_dir_enc = 'utf-8'
+" 使用鼠标映射
+let g:vimwiki_use_mouse = 1
+" 相关配置
+let g:vimwiki_list = [{
+\ 'path': 'E:/website/vimwiki',
+\ 'path_html': 'E:/website/hellolife.github.io',
+\ 'template_path': 'E:/website/template/',
+\ 'template_default': 'def_template',
+\ 'template_ext': '.html',
+\ 'auto_export': 1,
+\ 'nested_syntaxes': {'C': 'c', 'C++': 'cpp', 'fortran': 'fortran', 'HTML': 'html', 'CSS': 'css', 'JavaScript': 'javascript', 'Vim': 'vim', 'Make': 'make'},}]
+" 设置Toggle on/off键
+nmap \tt <Plug>VimwikiToggleListItem
+" 高亮checked Todo list
+let g:vimwiki_hl_cb_checked=1
+" 设置Link之间跳转
+nmap \wn <Plug>VimwikiNextLink
+nmap \wp <Plug>VimwikiPrevLink
